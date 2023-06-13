@@ -1,21 +1,25 @@
-import react from "../assets/react.svg";
+import { FC } from "react";
 
-const Beer = () => {
+interface BeerProps {
+  image: string;
+  name: string;
+  tagline: string;
+  description: string;
+}
+
+const Beer: FC<BeerProps> = ({ image, name, tagline, description }) => {
   return (
     <div className="flex items-center p-4 shadow-md rounded-md mb-4 bg-white">
-      <img className="w-32 h-32" src={react} />
+      <div className="flex basis-1/4 justify-center items-center">
+        <img className="object-cover h-36" src={image} />
+      </div>
 
-      <div className="grow ml-4">
-        <h1 className="text-2xl font-bold">Better Beer</h1>
+      <div className="flex flex-col justify-center items-start text-left ml-4 basis-3/4">
+        <h1 className="text-2xl font-bold line-clamp-1">{name}</h1>
 
-        <h2 className="text-md text-orange-400">IPA German</h2>
+        <h2 className="text-md text-orange-400 line-clamp-1">{tagline}</h2>
 
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. At debitis
-          consequuntur sint error facilis aspernatur aliquam iure vero nisi,
-          animi minus illum. Aliquam, praesentium enim hic temporibus fuga
-          consequatur aliquid?
-        </p>
+        <p className="line-clamp-3">{description}</p>
       </div>
     </div>
   );

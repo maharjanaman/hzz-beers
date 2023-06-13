@@ -11,14 +11,18 @@ const Header: FC<HeaderProps> = ({ pageIndex, onSetPage, onAddBeerPress }) => {
     <div className="flex items-center h-14">
       <div className="grow">
         <button
-          className={`text-lg ${pageIndex === 0 ? "" : "text-gray-400"}`}
+          className={`text-lg transition ${
+            pageIndex === 0 ? "" : "text-gray-400"
+          }`}
           onClick={() => onSetPage(0)}
         >
           All Beers
         </button>
 
         <button
-          className={`ml-8 text-lg ${pageIndex === 1 ? "" : "text-gray-400"}`}
+          className={`ml-8 text-lg transition ${
+            pageIndex === 1 ? "" : "text-gray-400"
+          }`}
           onClick={() => onSetPage(1)}
         >
           My Beers
@@ -26,7 +30,7 @@ const Header: FC<HeaderProps> = ({ pageIndex, onSetPage, onAddBeerPress }) => {
       </div>
 
       <button
-        className={`bg-blue-600 text-white rounded-md px-4 py-2 ${
+        className={`bg-blue-600 text-white transition rounded-md px-4 py-2 ${
           pageIndex === 0 ? "hidden" : ""
         }`}
         onClick={onAddBeerPress}
