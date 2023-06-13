@@ -10,11 +10,17 @@ const Header: FC<HeaderProps> = ({ pageIndex, onSetPage, onAddBeerPress }) => {
   return (
     <div className="flex items-center h-14">
       <div className="grow">
-        <button className="text-lg" onClick={() => onSetPage(0)}>
+        <button
+          className={`text-lg ${pageIndex === 0 ? "" : "text-gray-400"}`}
+          onClick={() => onSetPage(0)}
+        >
           All Beers
         </button>
 
-        <button className="ml-8 text-lg" onClick={() => onSetPage(1)}>
+        <button
+          className={`ml-8 text-lg ${pageIndex === 1 ? "" : "text-gray-400"}`}
+          onClick={() => onSetPage(1)}
+        >
           My Beers
         </button>
       </div>
