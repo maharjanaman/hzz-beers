@@ -8,7 +8,7 @@ interface HeaderProps {
 
 const Header: FC<HeaderProps> = ({ pageIndex, onSetPage, onAddBeerPress }) => {
   return (
-    <div className="flex items-center">
+    <div className="flex items-center h-14">
       <div className="grow">
         <button className="text-lg" onClick={() => onSetPage(0)}>
           All Beers
