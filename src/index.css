@@ -7,6 +7,15 @@
 @layer base {
   html {
     @apply text-black;
-    font-family: 'Roboto', sans-serif;
+    @apply bg-gray-50;
+    font-family: "Roboto", sans-serif;
+  }
+
+  input {
+    @apply border border-slate-300 rounded-md w-full mb-3 p-2 outline-none;
+  }
+
+  textarea {
+    @apply border border-slate-300 rounded-md w-full mb-2 p-2 outline-none h-1/2;
   }
 }

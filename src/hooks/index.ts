@@ -1,3 +1,4 @@
 import useFetchWithPagination from "./useFetchWithPagination";
+import useAddBeerModal from "./useAddBeerModal";
 
-export { useFetchWithPagination };
+export { useFetchWithPagination, useAddBeerModal };

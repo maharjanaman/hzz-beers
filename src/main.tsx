@@ -2,6 +2,7 @@
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
+import 'react-tooltip/dist/react-tooltip.css'
 
 /**
  * !Removing StrictMode as useEffect was executing twice
