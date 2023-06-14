@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useMemo } from "react";
 
-import { ArrowDown, Beer, Header, Spinner } from "./components";
+import { ArrowDown, Beer, EmptyMyBeers, Header, Spinner } from "./components";
 import { useFetchWithPagination, useAddBeerModal } from "./hooks";
-import useMyBeersFacade from "./facades/useMyBeersFacade";
+import { useMyBeersFacade } from "./facades";
 
 function App() {
   const [pageIndex, setPageIndex] = useState<number>(0);
@@ -65,22 +65,7 @@ function App() {
       );
     }
 
-    return (
-      <div className="flex flex-col items-center pt-44 mt-4 bg-gray-200 h-screen">
-        <h3 className="text-gray-400">Nothing to see yet.</h3>
-
-        <div className="flex">
-          <h3
-            className="text-blue-600 cursor-pointer"
-            onClick={handleAddBeerPress}
-          >
-            Click here
-          </h3>
-
-          <h3 className="text-gray-400 ml-1">to add your first beer!</h3>
-        </div>
-      </div>
-    );
+    return <EmptyMyBeers onAddBeerPress={handleAddBeerPress} />;
   };
 
   const renderContent = () => {

@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { v4 as uuidv4 } from "uuid";
 
 import HouzzBeer from "../assets/houzzBeer.png";
-import useMyBeersFacade from "../facades/useMyBeersFacade";
+import { useMyBeersFacade } from "../facades";
 
 Modal.setAppElement("#root");
 
@@ -14,6 +14,7 @@ const useAddBeerModal = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -21,7 +22,10 @@ const useAddBeerModal = () => {
 
   const openModal = () => setIsOpen(true);
 
-  const closeModal = () => setIsOpen(false);
+  const closeModal = () => {
+    reset();
+    setIsOpen(false);
+  };
 
   const handleAddABeer = (values: any) => {
     const newBeer = {
@@ -31,6 +35,7 @@ const useAddBeerModal = () => {
       description: values.description,
     };
     addBeer(newBeer);
+    reset();
     closeModal();
   };
 
